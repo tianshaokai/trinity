@@ -618,7 +618,7 @@ class TrinityRecord(
 
       mAudioRecordService.start()
       setSpeed(mHandle, 1.0f / mSpeed.value)
-      val tag = "trinity-" + BuildConfig.VERSION_NAME + "-" + getNow()
+      val tag = "trinity-" + "_" + "-" + getNow()
       startEncode(
         mHandle, info.path, info.width, info.height, info.videoBitRate, info.frameRate,
         info.mediaCodecEncode,

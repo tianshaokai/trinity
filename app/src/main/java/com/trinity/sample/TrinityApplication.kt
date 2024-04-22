@@ -3,15 +3,12 @@
 package com.trinity.sample
 
 import android.app.Application
-import android.content.Context
 import android.os.Environment
 import android.text.TextUtils
-import com.tencent.bugly.crashreport.CrashReport
 import com.tencent.mars.xlog.Log
 import com.tencent.mars.xlog.Xlog
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 import java.io.*
 

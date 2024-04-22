@@ -1,26 +1,24 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.novoda.bintray-release'
-apply from: rootProject.file("secret.gradle")
+//apply plugin: 'com.novoda.bintray-release'
+//apply from: rootProject.file("secret.gradle")
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-apply plugin: 'bugly'
-
-bugly {
-    appId = 'c998b23a2d'
-    appKey = '6b89010f-1e5c-47ee-9def-182998f860b7'
-    debug = true
-}
+//apply plugin: 'bugly'
+//
+//bugly {
+//    appId = 'c998b23a2d'
+//    appKey = '6b89010f-1e5c-47ee-9def-182998f860b7'
+//    debug = true
+//}
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 30
 
     defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 29
+        minSdkVersion 23
+        targetSdkVersion 30
         versionCode 1
         versionName "0.2.9.1"
-
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
         externalNativeBuild {
             cmake {
@@ -64,16 +62,14 @@ dependencies {
     implementation 'com.alibaba.android.mnnkit:facedetection:0.0.5'
     implementation 'com.alibaba.android.mnnkit:handgesturedetection:0.0.6'
     implementation 'com.alibaba.android.mnnkit:portraitsegmentation:0.0.6'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
 }
 
 //生成源文件
-task sourcesJar(type: Jar) {
-    from android.sourceSets.main.java.srcDirs
-    classifier = 'sources'
-}
+//task sourcesJar(type: Jar) {
+//    from android.sourceSets.main.java.srcDirs
+//    classifier = 'sources'
+//}
 
 //生成Javadoc文档
 //task javadoc(type: Javadoc) {
@@ -93,27 +89,27 @@ task sourcesJar(type: Jar) {
 //    into "docs"
 //}
 
-//上传到JCenter所需要的源码文件
-artifacts {
-//    archives javadocJar
-    archives sourcesJar
-}
-
-//解决 JavaDoc 中文注释生成失败的问题
-tasks.withType(Javadoc) {
-    options.addStringOption('Xdoclint:none', '-quiet')
-    options.addStringOption('encoding', 'UTF-8')
-    options.addStringOption('charSet', 'UTF-8')
-}
-
-publish {
-    userOrg = 'wlanjie'
-    groupId = 'com.github.wlanjie'
-    artifactId = 'trinity'
-    publishVersion = '0.2.9.1'
-    desc = 'android short video sdk'
-    website = 'https://github.com/wlanjie/trinity'
-
-    bintrayUser = bintray_user
-    bintrayKey = bintray_key
-}
+////上传到JCenter所需要的源码文件
+//artifacts {
+////    archives javadocJar
+//    archives sourcesJar
+//}
+//
+////解决 JavaDoc 中文注释生成失败的问题
+//tasks.withType(Javadoc) {
+//    options.addStringOption('Xdoclint:none', '-quiet')
+//    options.addStringOption('encoding', 'UTF-8')
+//    options.addStringOption('charSet', 'UTF-8')
+//}
+//
+//publish {
+//    userOrg = 'wlanjie'
+//    groupId = 'com.github.wlanjie'
+//    artifactId = 'trinity'
+//    publishVersion = '0.2.9.1'
+//    desc = 'android short video sdk'
+//    website = 'https://github.com/wlanjie/trinity'
+//
+//    bintrayUser = bintray_user
+//    bintrayKey = bintray_key
+//}
